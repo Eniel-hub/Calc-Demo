@@ -30,7 +30,7 @@ document.addEventListener("keydown", (e)=>{
     }else if(e.key === 'Delete'){
         Delete();
     }else if(e.key === 'Backspace' || e.key === 'End'){
-       CE();
+       Cancel();
     }
 });
 
@@ -43,7 +43,7 @@ numButton.forEach(num =>{
 acButton.addEventListener('click', (e) => Delete());
 
 //ce button
-ceButton.addEventListener('click', (e) => CE());
+ceButton.addEventListener('click', (e) => Cancel());
 
 //equal button
 eqButton.addEventListener('click', (e) =>Equal());
@@ -171,8 +171,8 @@ function Delete(){
         document.querySelector('.display-indicate').style.color = 'rgba(255, 255, 255, 0.05)';
 }
 
-//Function for CE
-function CE(){
+//Function for Cancel a.k.a CE
+function Cancel(){
     if(displayMain.innerText != '0'){
         if(displayMain.innerText.length == 1){
             displayMain.innerText = '0';
