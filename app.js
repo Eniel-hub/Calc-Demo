@@ -18,26 +18,28 @@ let haveDot = false;
 let eq = false;
 let eq1 = true;
 
+
+//add event listener for key pressing
 document.addEventListener("keydown", (e)=>{
-    if(!isNaN(e.key)){
+    if(!isNaN(e.key)){ //numbers
         Numbers(e.key);
-    }else if(e.key === '/' || e.key === '*' || e.key === '-' || e.key === '+'){
+    }else if(e.key === '/' || e.key === '*' || e.key === '-' || e.key === '+'){ //operators
         Operator(e.key);
-    }else if(e.key === '=' || e.key === 'Enter'){
+    }else if(e.key === '=' || e.key === 'Enter'){ //equal
         Equal();
-    }else if(e.key === '.'){
+    }else if(e.key === '.'){ //dot
         Dot();
-    }else if(e.key === 'Delete'){
+    }else if(e.key === 'Delete'){ //AC
         Delete();
-    }else if(e.key === 'Backspace' || e.key === 'End'){
+    }else if(e.key === 'Backspace' || e.key === 'End'){ //CE
        Cancel();
     }
 });
 
+//add event listener for mouse click
+
 //numbers
-numButton.forEach(num =>{
-    num.addEventListener('click', (e) => Numbers(num.innerText));
-})
+numButton.forEach(num =>{ num.addEventListener('click', (e) => Numbers(num.innerText)); });
 
 //ac button
 acButton.addEventListener('click', (e) => Delete());
