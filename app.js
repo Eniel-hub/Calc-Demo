@@ -158,8 +158,14 @@ function Equal(){
                 (0, displayOperations.innerText.length-1), displayMain.innerText, 
                 displayOperations.innerText[displayOperations.innerText.length-1]);
     }
+    
     displayOperations.innerText += displayMain.innerText +='=';
-    displayMain.innerText = `${equal}`;
+    if(`${equal}`.length<=12){
+        displayMain.innerText = `${equal}`;
+    }else{
+        const equ = `${equal}`;
+        displayMain.innerText = `${equ.substr(0, 9)}...`;
+    }
     eq = true;
     eq1 = true;
     haveDot = false;
